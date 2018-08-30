@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+  <img src="assets/logo.png" class="top-logo" />
+</p>
+
+<h2>Rule</h2>
+<ol>
+  <li>The competition we start at {{ start_at }} and end at {{ end_at }} (in JST)</li>
+  <li>All problems are of King of the Hill style. Write your defense flag to the specified file of each problem.</li>
+  <li>Jeopardy problems may be added later.</li>
+  <li>Each problem hash one attack flag and one defense flag. The format of the attack flag format is OCamlab{....}</li>
+  <li>Defense flags of each player are username + nc 192.168.11.15 9999(we say this "flag keyword )(for example, when your username is <b>"OCamlab"</b> and <i>nc 192.168.11.15 9999</i> returns <b>"012345"</b>, your defense flag is <b>"OCamlab012345"</b>).</li>
+  <li>The flag keyword will be updated every 5 minutes (at XX:X5:00).</li>
+  <li>The defense point is 10pt.</li>
+</ol>
+
+<h2><del>Exhibited</del>Prohibited Things</h2>
+<ol>
+  <li>DoS Attack</li>
+  <li>Port scanning</li>
+  <li>Share your account with others</li>
+  <li>Share your flag with others</li>
+</ol>
+{% endblock %}

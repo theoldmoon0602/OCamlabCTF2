@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{{ base_url() }}/admin/competition" method="post" class="form">
+  <p><label>Start at</label><input type="datetime-local" name="start_at" value="{{ start_at }}" /></p>
+  <p><label>End at</label><input type="datetime-local" name="end_at" value="{{ end_at }}" /></p>
+  <p><label>Enabled</label><input type="checkbox" name="enabled" {% if enabled %}checked=true{% endif %} /></p>
+  <p><input type="submit" value="Save"></p>
+</form>
+{% endblock %}

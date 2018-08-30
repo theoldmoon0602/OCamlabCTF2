@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Ranking</h2>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Username</th>
+    <th>Point</th>
+  </tr>
+  {% for i, s in scores %}
+  <tr>
+    <td>{{ i + 1 }}</td>
+    <td>{{ s.username }}</td>
+    <td>{{ s.score }}</td>
+  </tr>
+  {%endfor %}
+</table>
+
+<h2>Latest Activities</h2>
+<ol>
+  {% for a in activities %}
+  <li>{{ a.created_at | date('H:i:s', 'Asia/Tokyo') }} {{ a.username }}
+    {% if a.activity_type == 2 %} got {{ a.got_score }} defense point of {{ a.title }}
+    {% elseif a.activity_type == 1 %} got {{ a.got_score }} attack point of {{ a.title }}
+    {% else %} submitted flag to {{ a.title }} but it was wrong
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

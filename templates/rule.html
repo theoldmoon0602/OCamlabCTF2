@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Rule</h2>
+<ol>
+  <li>Competition start at {{ start_at }} and end at {{ end_at }}</li>
+  <li>All problems are King of the Hill style. Write your defense flag to specified file of each problem.</li>
+  <li>There are one attack flag and one defense flag for each problem.</li>
+  <li>Defense flags of each player are &lt;username&gt; + &lt;nc A.B.C.D 9999(we say this "flag keyword")&gt; (concatenation).</li>
+  <li>The flag keyword is updated every 5 minutes (at XX:05:00).</li>
+  <li>Defense point (10 pts) is given each King of the Hill player before update flag keyword (at XX:04:50 - XX:04:59).</li>
+</ol>
+
+<h2><del>Exhibited</del>Prohibited</h2>
+<ol>
+  <li>DoS Attack</li>
+  <li>Share your account with others</li>
+  <li>Share your flag with others</li>
+  <li>And not correctness things</li>
+</ol>
+{% endblock %}

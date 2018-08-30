@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="{{ base_url() }}/assets/favicon.png">
+  <link rel="stylesheet" href="{{ base_url() }}/assets/style.css">
+  <title>OCamlab CTF #2</title>
+  {% block style %}
+  {% endblock style %}
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar">
+        <span> OCamlab CTF #2</span>
+        <ul>
+          <div class="navbar-left">
+            <li><a href="{{ base_url() }}/">TOP</a></li>
+            <li><a href="{{ base_url() }}/problems">Problems</a></li>
+            <li><a href="{{ base_url() }}/scores">Scores</a></li>
+          </div>
+          <div class="navbar-right">
+            {% if session.user %}
+            <li><form name="logout" method="post" action="{{base_url()}}/logout"><a href="#" onclick="document.forms.logout.submit()">Logout</a></form></li>
+            <li><a href="#">{{ session.user }}</a></li>
+              {% if session.is_admin %}
+            <li><a href="{{ base_url() }}/admin">admin page</a></li>
+
+              {% endif %}
+            {% else %}
+            <li><a href="{{ base_url() }}/login">Login</a></li>
+            {% endif %}
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+    {% set messages = flash('messages') %}
+    {% if messages %}
+      <ul class="messages">
+      {% for m in messages %}
+        <li>{{ m }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% set errors = flash('errors') %}
+    {% if errors %}
+      <ul class="errors">
+      {% for e in errors %}
+        <li>{{ e }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+    </main>
+
+  </div>
+  {% block script %}
+  {% endblock script %}
+</body>
+</html>

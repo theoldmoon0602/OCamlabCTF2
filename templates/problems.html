@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for p in problems %}
+  <h3>{%if p.solved %}✅ {%endif%}<a href="{{ base_url() }}/problem/{{ p.id }}">[{{p.point}}]{{ p.title }}</a></h3>
+{% endfor %}
+{% endblock %}

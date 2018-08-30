@@ -1,0 +1,112 @@
+* {
+  --main-color: #393e46;
+  color: #393e46;
+}
+body {
+  font-size: 24px;
+  padding-top: 40px;
+  width: 1024px;
+  margin: 0 auto;
+}
+main {
+  padding-top: 50px;
+}
+
+ol li {
+  font-size: 20px;
+  width: 800px;
+  margin: 0 auto;
+
+}
+
+.navbar {
+  padding: 5px;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.navbar .navbar-left, .navbar .navbar-right {
+  display: flex;
+}
+.navbar li {
+  flex-basis: 40px 1;
+  margin-left: 5px;
+
+  border-bottom: 2px solid var(--main-color);
+}
+.navbar li:active {
+  position: relative;
+  top: 2px;
+  border-bottom: none;
+}
+.navbar .navbar-right {
+  margin-left: auto;
+}
+.navbar a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: var(--main-color);
+  padding: 5px 15px;
+}
+.top-logo {
+  width: 100%;
+}
+
+.errors, .messages {
+  padding: 1em;
+  list-style: none;
+  border-radius: 4px;
+}
+.messages {
+  border: 2px solid var(--main-color);
+}
+.errors {
+  background-color: #ff6161;
+  border: 2px solid #cc0000;
+}
+
+.form {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.form label {
+  display: inline-block;
+  width: 120px;
+}
+
+.form input[type=text], .form input[type=password] {
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  text-align: center;
+}
+
+.form input[type=submit] {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.form input[type=submit]:hover {
+  cursor: pointer;
+}
+.form input[type=submit]:active {
+  position: relative;
+  top: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 400px;
+  margin: 0 auto;
+}
+tr:first-child {
+  border-bottom: 2px solid var(--main-color);
+}
+td,th {
+  font-size: 20px;
+  text-align: center;
+}
